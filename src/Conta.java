@@ -27,6 +27,28 @@ public class Conta {
             System.out.println(menu);
             // O nextInt diz qual tipo de dado será lido. Nesse caso é um inteiro
             opcao = leitura.nextInt();
+
+            if (opcao == 1 ){
+                System.out.println("O saldo atualizado é: " + saldo);
+            } else if (opcao == 2) {
+                System.out.println("Qual o valor que deseja transferir?");
+                double valor = leitura.nextDouble();
+                if (valor > saldo){
+                    System.out.println("Não há saldo suficiente para realizar transferência");
+                }
+                else {
+                    saldo -= valor;
+                    System.out.println("Saldo atual: " + saldo);
+                }
+            } else if (opcao == 3) {
+                System.out.println("Valor recebido:");
+                double valor = leitura.nextDouble();
+                saldo += valor;
+                System.out.println("Saldo atual: " + saldo);
+            } else if (opcao != 4){
+                System.out.println("Opcao Invalida");
+            }
+
         }
     }
 }
